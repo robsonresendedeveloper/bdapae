@@ -1,0 +1,183 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+ * {
+ 	margin: 0 !important;
+ 	padding: 0 !important;
+ 	border: 0;
+ }
+ header {
+ 	width: 100%;
+ 	height: 130px;
+ 	position: relative;
+ 	float: left;
+ 	background-color: #F8EDC0;
+ }
+header .header-logo {
+	width: 80px;
+	height: 100px;
+	position: relative;
+	float: left;
+	left: 15px;
+	top: 15px;
+}
+.header-logo img {
+	width: 100%;
+	height: 100%;
+	position: relative;
+	float: left;
+}
+header .header-links {
+	position: relative;
+	float: right;
+	right: 15px;
+}
+.header-links ul {
+	display: inline-block;
+	list-style-type: none;
+	margin-top: 50px !important;
+}
+.header-links li {
+	display: inline;
+	margin-left: 15px !important;
+	font-size: 18px;
+}
+.header-links a {
+	text-decoration: none;
+	transition: .5s;
+}
+.header-links a:hover {
+	color: #EBC714;
+	background-color: #F8EDC0;
+}
+.notices {
+	width: 100%;
+	position: relative;
+	float: left;
+}
+.center-content {
+	width: 80%;
+	position: relative;
+	float: left;
+	margin-top: 50px !important;
+	left: 10%;
+}
+.center-content h1 {
+	position: relative;
+	text-align: center;
+	margin-bottom: 30px !important;
+}
+.center-content label,p {
+	text-align: center;
+}
+.center-content hr {
+	width: 10%;
+	position: relative;
+	left: 45%;
+	margin-top: 5px !important;
+	margin-bottom: 5px !important;
+	border: 1px solid #000;
+}
+.center-content input,textarea,select {
+	height: 30px;
+	position: relative;
+	border: 1px solid #000;
+	width: 50%;
+	left: 25%;
+	margin-bottom: 20px !important;
+	border-radius: 5px;
+}
+.center-content textarea {
+	height: 100px !important;
+}
+.btn-submit {
+	width: 20% !important;
+	height: 40px !important;
+	left: 40% !important;
+	background-color: #EBC714;
+	transition: .5s;
+}
+.btn-submit:hover {
+	opacity: .5;
+	cursor: pointer;
+}
+.center-links {
+	width: 100% !important;
+	text-align: center;
+}
+.center-links a:hover {
+	background-color: #fff;
+	color: #666666;
+}
+
+
+
+
+
+/* WELCOME */
+
+.banner {
+	width: 100%;
+	height: 500px;
+	position: relative;
+	float: left;
+}
+.banner img {
+	width: 100%;
+	height: 100%;
+}
+
+
+
+
+/* PACIENTES */
+
+#term {
+	width: 20% !important;
+	left: 0 !important;
+}
+#input-search-button {
+	width: 10% !important;
+	left: 0 !important;
+	background-color: #FFA95C;
+	transition: .5s;
+	cursor: pointer;
+}
+
+#input-search-button:hover {
+	opacity: .5;
+}
+.center-content table {
+	width: 100%;
+}
+.center-content table, th, td {
+	border: 1px solid #000;
+}
+.center-content tr {
+	height: 80px !important;
+	overflow: auto;
+}
+.center-content td {
+	text-align: center;
+}
+.links-patient {
+	width: 148px;
+	position: relative;
+	float: left;
+	left: 42%;
+	margin-top: 30px !important;
+}
+
+

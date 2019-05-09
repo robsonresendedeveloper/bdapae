@@ -1,0 +1,42 @@
+<div class="center-content">
+
+  <h1>Pacientes</h1>
+
+  <%= form_tag(patients_path, method: :get) do %>
+    Buscar paciente: <%= text_field_tag :term, params[:term] %>
+    <%= submit_tag 'Buscar', id: "input-search-button", name: nil %>
+  <% end %>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Código</th>
+        <th>Nome</th>
+        <th>Sexo</th>
+        <th>Data de Entrada</th>
+        <th>Data de Saída</th>
+        <th colspan="3">Opções</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @patients.each do |patient| %>
+        <tr>
+          <td><%= patient.id %></td>
+          <td><%= patient.name %></td>
+          <td><%= patient.sex %></td>
+          <td><%= patient.entry_date.to_time.strftime("%d-%m-%Y") %></td>
+          <td><%= patient.exit_date.to_time.strftime("%d-%m-%Y") %></td>
+          <td><%= link_to 'Ver ficha completa', patient %></td>
+          <td><%= link_to 'Editar', edit_patient_path(patient) %></td>
+          <td><%= link_to 'Remover', patient, method: :delete, data: { confirm: 'Tem certeza que deseja remover esse paciente do sistema?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <br>
+
+  <%= link_to 'Cadastrar Paciente', new_patient_path %>
+
+</div>

@@ -1,0 +1,51 @@
+<div class="center-content">
+
+  <h1>Dados do Paciente</h1>
+
+  <p>
+    <strong>Nome:</strong>
+    <%= @patient.name %>
+  </p>
+  <hr>
+  <p>
+    <strong>Sexo:</strong>
+    <%= @patient.sex %>
+  </p>
+  <hr>
+  <p>
+    <strong>Data de nascimento:</strong>
+    <%= @patient.born.to_time.strftime("%d-%m-%Y") %>
+  </p>
+  <hr>
+  <p>
+    <strong>Nome da mãe:</strong>
+    <%= @patient.mother_name %>
+  </p>
+  <hr>
+  <p>
+    <strong>Nome do pai:</strong>
+    <%= @patient.father_name %>
+  </p>
+  <hr>
+  <p>
+    <strong>data de entrada:</strong>
+    <%= @patient.entry_date.to_time.strftime("%d-%m-%Y") %>
+  </p>
+  <hr>
+  <p>
+    <strong>Data de saída:</strong>
+    <%= @patient.exit_date.to_time.strftime("%d-%m-%Y") %>
+  </p>
+  <hr>
+  <p>
+    <strong>Informações:</strong>
+    <%= @patient.infos %>
+  </p>
+
+  <div class="links-patient">
+    <%= link_to 'Editar Usuário', edit_patient_path(@patient) %> |
+    <%= link_to 'Voltar', patients_path %>
+  </div>
+ 
+
+</div>

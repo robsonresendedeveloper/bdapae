@@ -1,0 +1,56 @@
+<%= form_with(model: patient, local: true) do |form| %>
+  <% if patient.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(patient.errors.count, "error") %> prohibited this patient from being saved:</h2>
+
+      <ul>
+      <% patient.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :Nome %>
+    <%= form.text_field :name %>
+  </div>
+  <div class="field">
+    <%= form.label :Sexo %>
+    <%= form.select :sex, ['Masculino','Feminino','Outro'] %>
+  </div>
+
+  <div class="field">
+    <label>Data de Nascimento</label>
+    <%= form.date_field :born %>
+  </div>
+
+  <div class="field">
+    <label>Nome da Mãe</label>
+    <%= form.text_field :mother_name %>
+  </div>
+
+  <div class="field">
+    <label>Nome do Pai</label>
+    <%= form.text_field :father_name %>
+  </div>
+
+  <div class="field">
+    <label>Data de Entrada</label>
+    <%= form.date_field :entry_date %>
+  </div>
+
+  <div class="field">
+    <label>Data de Saída</label>
+    <%= form.date_field :exit_date %>
+  </div>
+
+  <div class="field">
+    <label>Informações Adicionais</label>
+    <%= form.text_area :infos %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit "Cadastrar Paciente", class: "btn-submit" %>
+  </div>
+<% end %>

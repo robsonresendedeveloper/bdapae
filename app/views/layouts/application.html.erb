@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Bdapae</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <header>
+      <%= link_to root_path do %>
+        <div class="header-logo">
+          <%= image_tag "logo1.png" %>
+        </div>
+      <% end %>
+      <div class="header-links">
+        <ul>
+          <% if user_signed_in? %>
+            <%= link_to new_patient_path do %>
+              <li>Cadastrar um paciente</li>
+            <% end %>
+            <%= link_to new_user_registration_path do %>
+              <li>Cadastrar um usuário do sistema</li>
+            <% end %>
+            <%= link_to patients_path do %>
+              <li>Lista de pacientes</li>
+            <% end %>
+            <%= link_to destroy_user_session_path do %>
+              <li>Sair</li>
+            <% end %>
+          <% else %>
+            <%= link_to user_session_path do %>
+              <li>Login</li>
+            <% end %>
+          <% end %>
+        </ul>
+
+      </div>
+    </header>
+    <div class="notices">
+      <% flash.each do |name, msg| %>
+        <ul>
+            <li><%= msg %></li>   
+        </ul>
+      <% end %>
+    </div>
+    <%= yield %>
+  </body>
+</html>
