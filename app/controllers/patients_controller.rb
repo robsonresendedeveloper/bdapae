@@ -24,6 +24,9 @@ class PatientsController < ApplicationController
 
   # GET /patients/1/edit
   def edit
+    @patient.born =  @patient.born.to_time.strftime("%d/%m/%Y").to_s
+    @patient.entry_date =  @patient.entry_date.to_time.strftime("%d/%m/%Y").to_s
+    @patient.exit_date =  @patient.exit_date.to_time.strftime("%d/%m/%Y").to_s
   end
 
   # POST /patients
