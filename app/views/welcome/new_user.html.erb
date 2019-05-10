@@ -1,0 +1,21 @@
+<div class="center-content">
+	<h1>cadastrar um usuário do sistema</h1>
+
+	<%= form_tag(save_user_path, method: :post) do %>
+		<div class="field">
+	    <label>Digite o email: </label>
+	    <%= email_field :email, params[:email], required: true %>
+	  </div>
+	  <div class="field">
+	    <label>Digite a senha: </label>
+	   	<%= password_field :pass, params[:pass], required: true %>
+	  </div>
+	  <div class="field">
+	    <label>Confirme a senha: </label>
+	   	<%= password_field :pass_confirm, params[:pass_confirm], required: true %>
+	  </div>
+	  <%= submit_tag 'Cadastrar', class: "btn-submit" %>
+	<% end %>
+
+</div>
+

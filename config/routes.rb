@@ -8,6 +8,10 @@ Rails.application.routes.draw do
 
   root to: "welcome#index"
 
+  get 'new_user', to: 'welcome#new_user'
+
+  post 'save_user', to: 'welcome#save_user'
+
   devise_scope :user do
     get 'users/sign_out' => "devise/sessions#destroy"
 end
