@@ -1,5 +1,7 @@
 class WelcomeController < ApplicationController
 
+	before_action :authenticate_user, only: [:new_user,:save_user]
+
 	def index
 	end
 
@@ -30,5 +32,14 @@ class WelcomeController < ApplicationController
 			redirect_to new_user_path
 		end
 	end
+
+	private
+	
+	def authenticate_user
+      if !user_signed_in?
+        redirect_to root_path
+        flash[:danger] = "Você não tem acesso a essa área"
+      end
+    end
 
 end
