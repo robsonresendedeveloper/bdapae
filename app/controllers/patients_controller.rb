@@ -27,19 +27,19 @@ class PatientsController < ApplicationController
     if (@patient.born != "" && @patient.born != nil)
       @patient.born =  @patient.born.to_time.strftime("%d/%m/%Y").to_s
     else
-      @patient.born = "dd/mm/aaaa";
+      @patient.born = "";
     end
 
     if (@patient.entry_date != "" && @patient.entry_date != nil)
       @patient.entry_date =  @patient.entry_date.to_time.strftime("%d/%m/%Y").to_s
     else
-      @patient.entry_date = "dd/mm/aaaa"
+      @patient.entry_date = ""
     end
 
     if (@patient.exit_date != "" && @patient.exit_date != nil)
       @patient.exit_date =  @patient.exit_date.to_time.strftime("%d/%m/%Y").to_s
     else
-      @patient.exit_date = "dd/mm/aaaa"
+      @patient.exit_date = ""
     end
   end
 
