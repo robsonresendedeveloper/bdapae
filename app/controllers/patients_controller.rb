@@ -24,9 +24,23 @@ class PatientsController < ApplicationController
 
   # GET /patients/1/edit
   def edit
-    @patient.born =  @patient.born.to_time.strftime("%d/%m/%Y").to_s
-    @patient.entry_date =  @patient.entry_date.to_time.strftime("%d/%m/%Y").to_s
-    @patient.exit_date =  @patient.exit_date.to_time.strftime("%d/%m/%Y").to_s
+    if (@patient.born != "" && @patient.born != nil)
+      @patient.born =  @patient.born.to_time.strftime("%d/%m/%Y").to_s
+    else
+      @patient.born = "dd/mm/aaaa";
+    end
+
+    if (@patient.entry_date != "" && @patient.entry_date != nil)
+      @patient.entry_date =  @patient.entry_date.to_time.strftime("%d/%m/%Y").to_s
+    else
+      @patient.entry_date = "dd/mm/aaaa"
+    end
+
+    if (@patient.exit_date != "" && @patient.exit_date != nil)
+      @patient.exit_date =  @patient.exit_date.to_time.strftime("%d/%m/%Y").to_s
+    else
+      @patient.exit_date = "dd/mm/aaaa"
+    end
   end
 
   # POST /patients
