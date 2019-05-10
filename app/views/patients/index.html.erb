@@ -25,12 +25,12 @@
           <td><%= patient.id %></td>
           <td><%= patient.name %></td>
           <td><%= patient.sex %></td>
-          <% if patient.entry_date %>
+          <% if (patient.entry_date != "" && patient.entry_date != nil) %>
             <td><%= patient.entry_date.to_time.strftime("%d-%m-%Y") %></td>
           <% else %>
             <td>Sem data</td>
           <% end %>
-          <% if patient.exit_date %>
+          <% if (patient.exit_date != "" && patient.exit_date != nil) %>
             <td><%= patient.exit_date.to_time.strftime("%d-%m-%Y") %></td>
           <% else %>
             <td>Sem data</td>
