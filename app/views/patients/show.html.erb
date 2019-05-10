@@ -14,7 +14,11 @@
   <hr>
   <p>
     <strong>Data de nascimento:</strong>
-    <%= @patient.born.to_time.strftime("%d-%m-%Y") %>
+    <% if (@patient.born != "" && @patient.born != nil) %>
+      <%= @patient.born.to_time.strftime("%d-%m-%Y") %>
+    <% else %>
+      Sem data
+    <% end %>
   </p>
   <hr>
   <p>
@@ -29,12 +33,20 @@
   <hr>
   <p>
     <strong>data de entrada:</strong>
-    <%= @patient.entry_date.to_time.strftime("%d-%m-%Y") %>
+    <% if (@patient.entry_date != "" && @patient.entry_date != nil) %>
+      <%= @patient.entry_date.to_time.strftime("%d-%m-%Y") %>
+    <% else %>
+      Sem data
+    <% end %>
   </p>
   <hr>
   <p>
     <strong>Data de saída:</strong>
-    <%= @patient.exit_date.to_time.strftime("%d-%m-%Y") %>
+    <% if (@patient.exit_date != "" && @patient.exit_date != nil) %>
+      <%= @patient.exit_date.to_time.strftime("%d-%m-%Y") %>
+    <% else %>
+      Sem data
+    <% end %>
   </p>
   <hr>
   <p>

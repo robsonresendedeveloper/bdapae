@@ -23,7 +23,7 @@
   <div class="field">
     <label>Data de Nascimento</label>
     <% if @patient.new_record? %>
-      <%= form.date_field :born, required: true %>
+      <%= form.date_field :born %>
     <% else %>
       <%= form.text_field :born %>
     <% end %>
@@ -42,7 +42,7 @@
   <div class="field">
     <label>Data de Entrada</label>
     <% if @patient.new_record? %>
-      <%= form.date_field :entry_date, required: true %>
+      <%= form.date_field :entry_date %>
     <% else %>
       <%= form.text_field :entry_date %>
     <% end %>
@@ -51,7 +51,7 @@
   <div class="field">
     <label>Data de Saída</label>
     <% if @patient.new_record? %>
-      <%= form.date_field :exit_date, required: true %>
+      <%= form.date_field :exit_date %>
     <% else %>
       <%= form.text_field :exit_date %>
     <% end %>
