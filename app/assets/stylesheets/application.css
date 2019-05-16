@@ -18,6 +18,9 @@
  	padding: 0 !important;
  	border: 0;
  }
+ body {
+ 	background-color: #BEE890;
+ }
  header {
  	width: 100%;
  	height: 130px;
@@ -136,7 +139,7 @@ header .header-links {
 }
 .banner img {
 	width: 100%;
-	height: 100%;
+	height: 110%;
 }
 
 
@@ -164,6 +167,7 @@ header .header-links {
 }
 .center-content table, th, td {
 	border: 1px solid #000;
+	background-color: #fff;
 }
 .center-content tr {
 	height: 80px !important;
@@ -179,5 +183,55 @@ header .header-links {
 	left: 42%;
 	margin-top: 30px !important;
 }
-
+footer {
+	width: 100%;
+	height: 200px;
+	position: relative;
+	float: left;
+	background-color: #fff;
+	top: 50px;
+}
+footer .logo {
+	width: 16%;
+	height: 200px;
+	position: relative;
+	float: left;
+	left: 1%;
+}
+.logo img {
+	width: 100%;
+	height: 100%;
+}
+footer .infos {
+	width: 77%;
+	height: 200px;
+	position: relative;
+	float: right;
+	right: 1%;
+}
+.infos h2 {
+	width: 60%;
+	position: relative;
+	float: left;
+	text-align: center;
+	top: 70px;
+	color: #000;
+}
+.infos a {
+	text-decoration: none;
+	color: #000;
+	transition: .5s;
+}
+.infos a:hover {
+	cursor: pointer;
+	color: #C59EFF;
+}
+.infos h3 {
+	width: 30%;
+	position: relative;
+	float: left;
+	text-align: center;
+	top: 70px;
+	color: #000;
+}
 
