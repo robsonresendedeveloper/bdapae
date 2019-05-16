@@ -6,9 +6,9 @@ class PatientsController < ApplicationController
   # GET /patients.json
   def index
     if params[:term]
-      @patients = Patient.where('name LIKE ?', "%#{params[:term]}%")
+      @patients = Patient.where('name LIKE ?', "%#{params[:term]}%").paginate(:page => params[:page], :per_page => 100)
     else
-      @patients = Patient.all
+      @patients = Patient.all.paginate(:page => params[:page], :per_page => 100)
     end
   end
 

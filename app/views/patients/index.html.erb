@@ -7,6 +7,8 @@
     <%= submit_tag 'Buscar', id: "input-search-button", name: nil %>
   <% end %>
 
+  <h2><%= will_paginate @patients %></h2>  
+  
   <table>
     <thead>
       <tr>
@@ -44,6 +46,8 @@
   </table>
 
   <br>
+
+  <h2><%= will_paginate @patients %></h2>  
 
   <%= link_to 'Cadastrar Paciente', new_patient_path %>
 
