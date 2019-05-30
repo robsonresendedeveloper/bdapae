@@ -6,15 +6,15 @@ class PatientsController < ApplicationController
   # GET /patients.json
   def index
     if params[:term]
-      @patients = Patient.where('name LIKE ?', "%#{params[:term]}%").paginate(:page => params[:page], :per_page => 100)
+      @patients = Patient.where('name LIKE ?', "%#{params[:term]}%").order("name ASC").paginate(:page => params[:page], :per_page => 100)
       if @patients.empty?
-        @patients = Patient.where('entry_date LIKE ?', "%#{params[:term]}%").paginate(:page => params[:page], :per_page => 100)
+        @patients = Patient.where('entry_date LIKE ?', "%#{params[:term]}%").order("name ASC").paginate(:page => params[:page], :per_page => 100)
         if @patients.empty?
-          @patients = Patient.where('exit_date LIKE ?', "%#{params[:term]}%").paginate(:page => params[:page], :per_page => 100)
+          @patients = Patient.where('exit_date LIKE ?', "%#{params[:term]}%").order("name ASC").paginate(:page => params[:page], :per_page => 100)
         end
       end
     else
-      @patients = Patient.all.paginate(:page => params[:page], :per_page => 100)
+      @patients = Patient.all.order("name ASC").paginate(:page => params[:page], :per_page => 100)
     end
   end
 
